@@ -1,0 +1,17 @@
+{
+  "name": "mernapp",
+  "version": "1.0.0",
+  "description": "Blog app based on the Mern Stack",
+  "main": "app.js",
+  "dependencies": {
+    "create-react-app": "^3.1.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Riza Khan and Otonye Iyalla",
+  "license": "ISC"
+}
