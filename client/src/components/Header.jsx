@@ -9,6 +9,7 @@ class Header extends Component {
         <h1>---Otonye Iyalla---</h1> 
         and <h1>---Riza Khan---</h1>
         <br/>
+        
         <Registration />
         </div> );
     }
