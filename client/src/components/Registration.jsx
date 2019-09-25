@@ -20,10 +20,10 @@ class Registration extends Component {
         e.preventDefault();
 
         const data = {
-            this.state
+            state
         }
 
-        axios.post('http://localhost:3001/registration', {this.state})
+        axios.post('http://localhost:3001/registration', {data})
     }
 
     render() {
