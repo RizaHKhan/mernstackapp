@@ -3,27 +3,35 @@ import axios from 'axios'
 
 class Registration extends Component {
 
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             username: '',
             email: '',
             password: ''
         }
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     change = e => {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    componentDidUpdate() {
+        this.onSubmit();
+    }
+
     onSubmit = (e) => {
-        e.preventDefault();
-
-        const data = {
-            state
-        }
-
-        axios.post('http://localhost:3001/registration', {data})
+        
+        const data = this.state
+        fetch('http://localhost/registration', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            body: JSON.stringify(data)
+        })
     }
 
     render() {
