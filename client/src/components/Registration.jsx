@@ -17,22 +17,26 @@ class Registration extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
-    componentDidUpdate() {
-        this.onSubmit();
-    }
+   
 
-    onSubmit = (e) => {
-        
-        const data = this.state
-        fetch('http://localhost/registration', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-              },
-            body: JSON.stringify(data)
+onSubmit = (e) => {
+
+e.preventDefault();
+
+    fetch('http://localhost:3003/registration', {
+    method: 'POST', 
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(this.state)
+    })
+        .then (function (response){
+        return response.json();
         })
-    }
+            .then(function(data){
+            console.log("the state", data)
+            });
+}
 
     render() {
         return(
